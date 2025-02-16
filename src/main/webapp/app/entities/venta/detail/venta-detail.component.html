@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="venta">
+      <h2 data-cy="ventaDetailsHeading"><span jhiTranslate="negocioApp.venta.detail.title">Venta</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ venta.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.idDispositivo">Id Dispositivo</span></dt>
+        <dd>
+          <span>{{ venta.idDispositivo }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.codigo">Codigo</span></dt>
+        <dd>
+          <span>{{ venta.codigo }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.nombre">Nombre</span></dt>
+        <dd>
+          <span>{{ venta.nombre }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.descripcion">Descripcion</span></dt>
+        <dd>
+          <span>{{ venta.descripcion }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.precioBase">Precio Base</span></dt>
+        <dd>
+          <span>{{ venta.precioBase }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.moneda">Moneda</span></dt>
+        <dd>
+          <span>{{ venta.moneda }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.fechaVenta">Fecha Venta</span></dt>
+        <dd>
+          <span>{{ venta.fechaVenta | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.precioFinal">Precio Final</span></dt>
+        <dd>
+          <span>{{ venta.precioFinal }}</span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.adicionales">Adicionales</span></dt>
+        <dd>
+          <span *ngFor="let adicionales of venta.adicionales; let last = last">
+            <a [routerLink]="['/adicional', adicionales.id, 'view']">{{ adicionales.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="negocioApp.venta.caracteristicas">Caracteristicas</span></dt>
+        <dd>
+          <span *ngFor="let caracteristicas of venta.caracteristicas; let last = last">
+            <a [routerLink]="['/caracteristica', caracteristicas.id, 'view']">{{ caracteristicas.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/venta', venta.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

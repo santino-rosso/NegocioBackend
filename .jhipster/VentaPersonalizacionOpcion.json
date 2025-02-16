@@ -1,0 +1,35 @@
+{
+  "applications": ["negocio"],
+  "changelogDate": "20241126021425",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "venta_personalizacion_opcion",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VentaPersonalizacionOpcion",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "opcion",
+      "otherEntityRelationshipName": "ventas",
+      "relationshipName": "opcion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "personalizacion",
+      "otherEntityRelationshipName": "ventas",
+      "relationshipName": "personalizacion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "venta",
+      "otherEntityRelationshipName": "personalizaciones",
+      "relationshipName": "venta",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": false,
+  "service": "serviceClass"
+}

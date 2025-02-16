@@ -1,0 +1,26 @@
+{
+  "negocioApp": {
+    "ventaPersonalizacionOpcion": {
+      "home": {
+        "title": "Venta Personalizacion Opcions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Venta Personalizacion Opcion",
+        "createOrEditLabel": "Create or edit a Venta Personalizacion Opcion",
+        "notFound": "No Venta Personalizacion Opcions found"
+      },
+      "created": "A new Venta Personalizacion Opcion is created with identifier {{ param }}",
+      "updated": "A Venta Personalizacion Opcion is updated with identifier {{ param }}",
+      "deleted": "A Venta Personalizacion Opcion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Venta Personalizacion Opcion {{ id }}?"
+      },
+      "detail": {
+        "title": "Venta Personalizacion Opcion"
+      },
+      "id": "ID",
+      "opcion": "Opcion",
+      "personalizacion": "Personalizacion",
+      "venta": "Venta"
+    }
+  }
+}

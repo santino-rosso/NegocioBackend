@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-venta-personalizacion-opcion-heading"
+        data-cy="VentaPersonalizacionOpcionCreateUpdateHeading"
+        jhiTranslate="negocioApp.ventaPersonalizacionOpcion.home.createOrEditLabel"
+      >
+        Create or edit a Venta Personalizacion Opcion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="negocioApp.ventaPersonalizacionOpcion.opcion" for="field_opcion">Opcion</label>
+          <select
+            class="form-control"
+            id="field_opcion"
+            data-cy="opcion"
+            name="opcion"
+            formControlName="opcion"
+            [compareWith]="compareOpcion"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="opcionOption" *ngFor="let opcionOption of opcionsSharedCollection">{{ opcionOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="negocioApp.ventaPersonalizacionOpcion.personalizacion" for="field_personalizacion"
+            >Personalizacion</label
+          >
+          <select
+            class="form-control"
+            id="field_personalizacion"
+            data-cy="personalizacion"
+            name="personalizacion"
+            formControlName="personalizacion"
+            [compareWith]="comparePersonalizacion"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="personalizacionOption" *ngFor="let personalizacionOption of personalizacionsSharedCollection">
+              {{ personalizacionOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="negocioApp.ventaPersonalizacionOpcion.venta" for="field_venta">Venta</label>
+          <select class="form-control" id="field_venta" data-cy="venta" name="venta" formControlName="venta" [compareWith]="compareVenta">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="ventaOption" *ngFor="let ventaOption of ventasSharedCollection">{{ ventaOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

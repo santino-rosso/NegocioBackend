@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity VentaPersonalizacionOpcion.
+    -->
+    <changeSet id="20241126021425-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="opcion_id"
+                                 baseTableName="venta_personalizacion_opcion"
+                                 constraintName="fk_venta_personalizacion_opcion__opcion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opcion"/>
+
+        <addForeignKeyConstraint baseColumnNames="personalizacion_id"
+                                 baseTableName="venta_personalizacion_opcion"
+                                 constraintName="fk_venta_personalizacion_opcion__personalizacion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="personalizacion"/>
+
+        <addForeignKeyConstraint baseColumnNames="venta_id"
+                                 baseTableName="venta_personalizacion_opcion"
+                                 constraintName="fk_venta_personalizacion_opcion__venta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="venta"/>
+    </changeSet>
+</databaseChangeLog>

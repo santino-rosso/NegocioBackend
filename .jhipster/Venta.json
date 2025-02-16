@@ -1,0 +1,77 @@
+{
+  "applications": ["negocio"],
+  "changelogDate": "20241126021325",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "venta",
+  "fields": [
+    {
+      "fieldName": "idDispositivo",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precioBase",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "moneda",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fechaVenta",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precioFinal",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Venta",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ventaPersonalizacionOpcion",
+      "otherEntityRelationshipName": "venta",
+      "relationshipName": "personalizaciones",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "adicional",
+      "otherEntityRelationshipName": "ventas",
+      "ownerSide": true,
+      "relationshipName": "adicionales",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "caracteristica",
+      "otherEntityRelationshipName": "ventas",
+      "ownerSide": true,
+      "relationshipName": "caracteristicas",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": false,
+  "service": "serviceClass"
+}

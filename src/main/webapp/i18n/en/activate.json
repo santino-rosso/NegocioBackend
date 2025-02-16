@@ -1,0 +1,9 @@
+{
+  "activate": {
+    "title": "Activation",
+    "messages": {
+      "success": "<strong>Your user account has been activated.</strong> You can now log in to the app.",
+      "error": "<strong>Your user could not be activated.</strong> Please re-register in the app."
+    }
+  }
+}

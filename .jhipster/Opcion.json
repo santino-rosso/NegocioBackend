@@ -1,0 +1,50 @@
+{
+  "applications": ["negocio"],
+  "changelogDate": "20241126021225",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "opcion",
+  "fields": [
+    {
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precioAdicional",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Opcion",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ventaPersonalizacionOpcion",
+      "otherEntityRelationshipName": "opcion",
+      "relationshipName": "ventas",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "personalizacion",
+      "otherEntityRelationshipName": "opciones",
+      "relationshipName": "personalizacion",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": false,
+  "service": "serviceClass"
+}
